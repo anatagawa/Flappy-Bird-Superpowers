@@ -1,0 +1,207 @@
+[
+  {
+    "id": "41",
+    "name": "Title Scene",
+    "type": "scene"
+  },
+  {
+    "id": "13",
+    "name": "Pipe Scene",
+    "type": "scene"
+  },
+  {
+    "id": "0",
+    "name": "Game Scene",
+    "type": "scene"
+  },
+  {
+    "id": "33",
+    "name": "Result Scene",
+    "type": "scene"
+  },
+  {
+    "id": "37",
+    "name": "Button Scene",
+    "type": "scene"
+  },
+  {
+    "id": "18",
+    "name": "Font",
+    "type": null,
+    "children": [
+      {
+        "id": "19",
+        "name": "Font",
+        "type": "font"
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "name": "Textures",
+    "type": null,
+    "children": [
+      {
+        "id": "29",
+        "name": "Get_ready",
+        "type": "sprite"
+      },
+      {
+        "id": "30",
+        "name": "tap",
+        "type": "sprite"
+      },
+      {
+        "id": "11",
+        "name": "Background",
+        "type": "sprite"
+      },
+      {
+        "id": "1",
+        "name": "Ground",
+        "type": "sprite"
+      },
+      {
+        "id": "4",
+        "name": "Nuages",
+        "type": "sprite"
+      },
+      {
+        "id": "20",
+        "name": "player",
+        "type": "sprite"
+      },
+      {
+        "id": "22",
+        "name": "pipe_haut",
+        "type": "sprite"
+      },
+      {
+        "id": "23",
+        "name": "pipe_bas",
+        "type": "sprite"
+      },
+      {
+        "id": "34",
+        "name": "Panneau_Result",
+        "type": "sprite"
+      },
+      {
+        "id": "35",
+        "name": "Game Over",
+        "type": "sprite"
+      },
+      {
+        "id": "38",
+        "name": "Menu",
+        "type": "sprite"
+      },
+      {
+        "id": "39",
+        "name": "New Game",
+        "type": "sprite"
+      },
+      {
+        "id": "42",
+        "name": "Title",
+        "type": "sprite"
+      },
+      {
+        "id": "43",
+        "name": "Start Button",
+        "type": "sprite"
+      },
+      {
+        "id": "45",
+        "name": "Fade",
+        "type": "sprite"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "name": "Music",
+    "type": null,
+    "children": [
+      {
+        "id": "17",
+        "name": "Music_game",
+        "type": "sound"
+      },
+      {
+        "id": "46",
+        "name": "Music_title",
+        "type": "sound"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "name": "Sfx",
+    "type": null,
+    "children": [
+      {
+        "id": "26",
+        "name": "AddScore",
+        "type": "sound"
+      },
+      {
+        "id": "27",
+        "name": "Swing",
+        "type": "sound"
+      },
+      {
+        "id": "32",
+        "name": "Splash",
+        "type": "sound"
+      },
+      {
+        "id": "36",
+        "name": "Menu_Show",
+        "type": "sound"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Scripts",
+    "type": null,
+    "children": [
+      {
+        "id": "24",
+        "name": "Game",
+        "type": "script"
+      },
+      {
+        "id": "6",
+        "name": "World Behavior",
+        "type": "script"
+      },
+      {
+        "id": "15",
+        "name": "Pipe Behavior",
+        "type": "script"
+      },
+      {
+        "id": "21",
+        "name": "Player Behavior",
+        "type": "script"
+      },
+      {
+        "id": "28",
+        "name": "Scroll Behavior",
+        "type": "script"
+      },
+      {
+        "id": "40",
+        "name": "Camera Behavior",
+        "type": "script"
+      },
+      {
+        "id": "44",
+        "name": "Title Behavior",
+        "type": "script"
+      }
+    ]
+  }
+]

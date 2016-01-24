@@ -1,0 +1,80 @@
+{
+  "behaviors": {
+    "WorldBehavior": {
+      "scriptId": "6",
+      "line": 3,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "tick",
+          "type": "number"
+        },
+        {
+          "name": "time",
+          "type": "number"
+        },
+        {
+          "name": "clock",
+          "type": "any"
+        }
+      ]
+    },
+    "PipeBehavior": {
+      "scriptId": "15",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "speed",
+          "type": "number"
+        },
+        {
+          "name": "addScore",
+          "type": "boolean"
+        }
+      ]
+    },
+    "PlayerBehavior": {
+      "scriptId": "21",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "old_pos",
+          "type": "Sup.Math.Vector2"
+        },
+        {
+          "name": "collide_pipe",
+          "type": "any"
+        },
+        {
+          "name": "collide_sol",
+          "type": "any"
+        }
+      ]
+    },
+    "ScrollBehavior": {
+      "scriptId": "28",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "speed",
+          "type": "number"
+        }
+      ]
+    },
+    "CameraBehavior": {
+      "scriptId": "40",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "TitleBehavior": {
+      "scriptId": "44",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    }
+  }
+}

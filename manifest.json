@@ -1,0 +1,7 @@
+{
+  "id": "btnP",
+  "name": "Flappy Bird",
+  "description": "Flappy Bird Clone",
+  "system": "supGame",
+  "formatVersion": 3
+}
