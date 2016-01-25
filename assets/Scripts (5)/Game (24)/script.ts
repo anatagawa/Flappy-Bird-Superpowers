@@ -57,6 +57,11 @@ namespace Game {
 	export let pipe_body: any = [];
 	export let currentScene: string = "Title Scene";
 	
+	export let music_ingame: Sup.Audio.SoundPlayer = new Sup.Audio.SoundPlayer("Music/Music_game", 0.1, {loop: true});
+	export let music_title: Sup.Audio.SoundPlayer = new Sup.Audio.SoundPlayer("Music/Music_title", 0.1, {loop: true});
+	
+	export let Button_tween_is_finish: boolean = false;
+	
 	export function setScore(score) {
 		SF_score += score;
 		if(SF_score > Best_score) Best_score = SF_score;

@@ -6,12 +6,12 @@ class WorldBehavior extends Sup.Behavior {
 	time: number = 0;
 	pipe: Sup.Actor = null;
 	clock: any;
-	music: Sup.Audio.SoundPlayer;
 	tween: TWEEN.Tween;
 	fadeIn_tween: TWEEN.Tween;
 	fadeOut_tween: TWEEN.Tween;
 
 	awake() {
+		Game.music_ingame.stop();
 		Game.player = Sup.getActor("World").getChild("Player");
 		Game.ScoreText = Sup.getActor("World").getChild("Score");
 		Game.SF_score = 0;
@@ -21,16 +21,25 @@ class WorldBehavior extends Sup.Behavior {
 		Game.isFalling = false;
 		Game.canMove = false;
 		Game.currentScene = "Game Scene";
+		
 		this.time = 0;
-		this.tween = new TWEEN.Tween( {opacity: 1} ).to( {opacity: 0}, 500 ).onUpdate( function() { Sup.getActor("Hud").getChild("get Ready").spriteRenderer.setOpacity(this.opacity); } );
-		this.fadeIn_tween = new TWEEN.Tween( {opacity:1} ).to( {opacity: 0}, 1000 ).onUpdate( function() { Sup.getActor("Fade").spriteRenderer.setOpacity(this.opacity); } );
-		this.fadeOut_tween = new TWEEN.Tween( {opacity:0} ).to( {opacity: 1}, 1000 ).onUpdate( function() { Sup.getActor("Fade").spriteRenderer.setOpacity(this.opacity); } )
+		
+		this.tween = new TWEEN.Tween( {opacity: 1} )
+			.to( {opacity: 0}, 500 )
+			.onUpdate( function() { Sup.getActor("Hud").getChild("get Ready").spriteRenderer.setOpacity(this.opacity); } );
+		
+		this.fadeIn_tween = new TWEEN.Tween( {opacity:1} )
+			.to( {opacity: 0}, 1000 )
+			.onUpdate( function() { Sup.getActor("Fade").spriteRenderer.setOpacity(this.opacity); } );
+		
+		this.fadeOut_tween = new TWEEN.Tween( {opacity:0} )
+			.to( {opacity: 1}, 1000 )
+			.onUpdate( function() { Sup.getActor("Fade").spriteRenderer.setOpacity(this.opacity); } )
 			.onComplete(function() { Sup.loadScene("Title Scene"); });
 	}
 
 	start() {
-		this.music = new Sup.Audio.SoundPlayer("Music/Music_game", 0.1, {loop: true}); //Sup.Audio.playSound("Music/Music_game", 0.1, {loop: true});
-		this.music.play();
+		Game.music_ingame.play();
 		this.fadeIn_tween.start();
 	}
 
@@ -60,12 +69,12 @@ class WorldBehavior extends Sup.Behavior {
 		
 		if(Sup.Input.wasKeyJustPressed("SPACE")) {
 			Sup.loadScene("Game Scene");
-			this.music.stop();
+			Game.music_ingame.stop();
 			Game.pipe_body = [];
 		}
 		
 		if(Game.isDie) {
-			this.music.stop();
+			Game.music_ingame.stop();
 		}
 	}
 

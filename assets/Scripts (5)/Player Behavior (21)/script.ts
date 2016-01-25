@@ -14,10 +14,24 @@ class PlayerBehavior extends Sup.Behavior {
 		this.actor.spriteRenderer.setAnimation( `skin_${Sup.Math.Random.integer(1,5)}`, true);
 		this.actor.spriteRenderer.stopAnimation();
 		Sup.ArcadePhysics2D.setGravity(0,0);
-		this.gameOver_tween = new TWEEN.Tween( {opacity:0} ).to( {opacity: 1}, 500 ).onUpdate( function() { Sup.getActor("Hud").getChild("Game Over").spriteRenderer.setOpacity(this.opacity); } );
-		this.button_tween = new TWEEN.Tween( {y:-40} ).to( {y: 156}, 300 ).onUpdate( function() { Sup.getActor("Hud").getChild("Button").setY(this.y); } );
-		this.result_tween = new TWEEN.Tween( {y:592} ).to( {y: 256}, 300 ).onUpdate( function() { Sup.getActor("Hud").getChild("Result").setY(this.y); } ).chain(this.button_tween);
-		this.score_tween = new TWEEN.Tween( {opacity:1} ).to( {opacity: 0}, 500 ).onUpdate( function() { Sup.getActor("Score").textRenderer.setOpacity(this.opacity); } );
+		
+		this.gameOver_tween = new TWEEN.Tween( {opacity:0} )
+			.to( {opacity: 1}, 500 )
+			.onUpdate( function() { Sup.getActor("Hud").getChild("Game Over").spriteRenderer.setOpacity(this.opacity); } );
+		
+		this.button_tween = new TWEEN.Tween( {y:-40} )
+			.to( {y: 156}, 300 )
+			.onUpdate( function() { Sup.getActor("Hud").getChild("Button").setY(this.y); } )
+			.onComplete(function() { Game.Button_tween_is_finish = true; });
+		
+		this.result_tween = new TWEEN.Tween( {y:592} )
+			.to( {y: 256}, 300 )
+			.onUpdate( function() { Sup.getActor("Hud").getChild("Result").setY(this.y); } )
+			.chain(this.button_tween);
+		
+		this.score_tween = new TWEEN.Tween( {opacity:1} )
+			.to( {opacity: 0}, 500 )
+			.onUpdate( function() { Sup.getActor("Score").textRenderer.setOpacity(this.opacity); } );
 	}
 
 	update() {
